@@ -30,3 +30,20 @@ function LeftOperand(Pattren,LeftOperand){
 		}
 	}
 }
+function RightOperand(Pattren,RightOperand){
+	this.tostring = function(){
+		if(p === 2) {return RightOperand;}
+		else if(p === 1){
+			if(LeftOperand === 0){return 'ZERO';}
+			if(LeftOperand === 1){return 'ONE';}
+			if(LeftOperand === 2){return 'TWO';}
+			if(LeftOperand === 3){return 'THREE';}
+			if(LeftOperand === 4){return 'FOUR';}
+			if(LeftOperand === 5){return 'FIVE';}
+			if(LeftOperand === 6){return 'SIX';}
+			if(LeftOperand === 7){return 'SEVEN';}
+			if(LeftOperand === 8){return 'EIGHT';}
+			if(LeftOperand === 9){return 'NINE';}v
+		}
+	}
+}
