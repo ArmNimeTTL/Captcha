@@ -1,17 +1,15 @@
-function captcha(Operator,Left,Right){
-	var Operator = new Operator();
-	var Left = new Left();
-	var Right = new Right();
+function captcha(Pattren,Operator,LeftOperand,RightOperand){
+	var Operator = new Operator(Operator);
+	var LeftOperand = new LeftOperand();
+	var RightOperand = new RightOperand();
 
-	return Left + ' ' + Oparetor + ' ' + Right;
+	return LeftOperand + ' ' + Oparetor + ' ' + RightOperand;
 }
-function pattern(p){
-	var p = new p();
-}
-function oaerator(Operator){}
-	var Operator = new Operator();
-	if(Operator === 0) {return '+';}
-	else if(Operator === 1) {return '-';}
-	else if(Operator === 2) {return '*';}
-	else if(Operator === 3) {return '/';}
+function oaerator(Operator){
+	this.tostring = function();{
+		if(Operator === 1) {return '+';}
+		else if(Operator === 2) {return '-';}
+		else if(Operator === 3) {return '*';}
+		else if(Operator === 4) {return '/';}
+	}
 }
