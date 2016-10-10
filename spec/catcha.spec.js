@@ -1,4 +1,4 @@
-function captcha(Pattren,Operator,LeftOperand,RightOperand){
+function Captcha(Pattren,Operator,LeftOperand,RightOperand){
 	var Operator = new Operator(Operator);
 	var LeftOperand = new LeftOperand();
 	var RightOperand = new RightOperand();
@@ -46,4 +46,11 @@ function RightOperand(Pattren,RightOperand){
 			if(LeftOperand === 9){return 'NINE';}v
 		}
 	}
+}
+
+describe('Captcha' , function() {
+	it('should echo "2 + FIVE" when input (1,1,2,5)',function(){
+		Captcha ex1 = new Captcha(1,1,2,5);
+	 expect(Captcha()).toEqual('2 + FIVE');
+ });
 }
