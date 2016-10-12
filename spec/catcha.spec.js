@@ -59,4 +59,8 @@ describe('Captcha' , function() {
 	 let test1 = new Captcha(1,1,8,2);
 	expect(test1.generate()).toEqual('8 + TWO');
 });
+it('should echo "1 - ONE" when input (1,2,1,1)',function(){
+	let test2 = new Captcha(1,2,1,1);
+ expect(test2.generate()).toEqual('1 - ONE');
+});
 });
