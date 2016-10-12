@@ -55,4 +55,8 @@ describe('Captcha' , function() {
 		let ex1 = new Captcha(1,1,2,5);
 	 expect(ex1.generate()).toEqual('2 + FIVE');
  });
+ it('should echo "8 + TWO" when input (1,1,8,2)',function(){
+	 let test1 = new Captcha(1,1,8,2);
+	expect(test1.generate()).toEqual('8 + TWO');
+});
 });
