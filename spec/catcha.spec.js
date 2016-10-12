@@ -1,51 +1,51 @@
-function Captcha(Pattren,Operator,LeftOperand,RightOperand){
-	this.tostring = function(){
-		var Operator = new Operator(Operator);
-		var LeftOperand = new LeftOperand(Pattren,LeftOperand);
-		var RightOperand = new RightOperand(Pattren,RightOperand);
+function Captcha(pt,op,lo,ro){
+	this.generate = function(){
+		var Operator1 = new operator(op);
+		var LeftOperand1 = new LeftOperand(pt,lo);
+		var RightOperand1 = new RightOperand(pt,ro);
 
-		return LeftOperand + ' ' + Oparetor + ' ' + RightOperand;
+		return LeftOperand1 + ' ' + Operator1 + ' ' + RightOperand1;
 	}
 }
 function operator(Operator){
-	this.tostring = function(){
-		if(Operator === 1) {return '+';}
-		else if(Operator === 2) {return '-';}
-		else if(Operator === 3) {return '*';}
-		else if(Operator === 4) {return '/';}
+	this.toString = function(){
+		if(Operator == 1) {return '+';}
+		else if(Operator == 2) {return '-';}
+		else if(Operator == 3) {return '*';}
+		else if(Operator == 4) {return '/';}
 	}
 }
 function LeftOperand(Pattren,LeftOperand){
-	this.tostring = function(){
+	this.toString = function(){
 		if(Pattren === 1) {return LeftOperand;}
 		else if(Pattren === 2){
 			if(LeftOperand === 0){return 'ZERO';}
-			if(LeftOperand === 1){return 'ONE';}
-			if(LeftOperand === 2){return 'TWO';}
-			if(LeftOperand === 3){return 'THREE';}
-			if(LeftOperand === 4){return 'FOUR';}
-			if(LeftOperand === 5){return 'FIVE';}
-			if(LeftOperand === 6){return 'SIX';}
-			if(LeftOperand === 7){return 'SEVEN';}
-			if(LeftOperand === 8){return 'EIGHT';}
-			if(LeftOperand === 9){return 'NINE';}v
+			else if(LeftOperand === 1){return 'ONE';}
+			else if(LeftOperand === 2){return 'TWO';}
+			else if(LeftOperand === 3){return 'THREE';}
+			else if(LeftOperand === 4){return 'FOUR';}
+			else if(LeftOperand === 5){return 'FIVE';}
+			else if(LeftOperand === 6){return 'SIX';}
+			else if(LeftOperand === 7){return 'SEVEN';}
+			else if(LeftOperand === 8){return 'EIGHT';}
+			else if(LeftOperand === 9){return 'NINE';}
 		}
 	}
 }
 function RightOperand(Pattren,RightOperand){
-	this.tostring = function(){
+	this.toString = function(){
 		if(Pattren === 2) {return RightOperand;}
 		else if(Pattren === 1){
-			if(LeftOperand === 0){return 'ZERO';}
-			if(LeftOperand === 1){return 'ONE';}
-			if(LeftOperand === 2){return 'TWO';}
-			if(LeftOperand === 3){return 'THREE';}
-			if(LeftOperand === 4){return 'FOUR';}
-			if(LeftOperand === 5){return 'FIVE';}
-			if(LeftOperand === 6){return 'SIX';}
-			if(LeftOperand === 7){return 'SEVEN';}
-			if(LeftOperand === 8){return 'EIGHT';}
-			if(LeftOperand === 9){return 'NINE';}v
+			if(RightOperand === 0){return 'ZERO';}
+			else if(RightOperand === 1){return 'ONE';}
+			else if(RightOperand === 2){return 'TWO';}
+			else if(RightOperand === 3){return 'THREE';}
+			else if(RightOperand === 4){return 'FOUR';}
+			else if(RightOperand === 5){return 'FIVE';}
+			else if(RightOperand === 6){return 'SIX';}
+			else if(RightOperand === 7){return 'SEVEN';}
+			else if(RightOperand === 8){return 'EIGHT';}
+			else if(RightOperand === 9){return 'NINE';}
 		}
 	}
 }
@@ -53,6 +53,6 @@ function RightOperand(Pattren,RightOperand){
 describe('Captcha' , function() {
 	it('should echo "2 + FIVE" when input (1,1,2,5)',function(){
 		let ex1 = new Captcha(1,1,2,5);
-	 expect(ex1()).toEqual('2 + FIVE');
+	 expect(ex1.generate()).toEqual('2 + FIVE');
  });
 });
