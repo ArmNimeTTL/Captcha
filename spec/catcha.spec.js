@@ -1,9 +1,11 @@
 function Captcha(Pattren,Operator,LeftOperand,RightOperand){
-	var Operator = new Operator(Operator);
-	var LeftOperand = new LeftOperand();
-	var RightOperand = new RightOperand();
+	this.tostring = function(){
+		var Operator = new Operator(Operator);
+		var LeftOperand = new LeftOperand(Pattren,LeftOperand);
+		var RightOperand = new RightOperand(Pattren,RightOperand);
 
-	return LeftOperand + ' ' + Oparetor + ' ' + RightOperand;
+		return LeftOperand + ' ' + Oparetor + ' ' + RightOperand;
+	}
 }
 function operator(Operator){
 	this.tostring = function(){
@@ -15,8 +17,8 @@ function operator(Operator){
 }
 function LeftOperand(Pattren,LeftOperand){
 	this.tostring = function(){
-		if(p === 1) {return LeftOperand;}
-		else if(p === 2){
+		if(Pattren === 1) {return LeftOperand;}
+		else if(Pattren === 2){
 			if(LeftOperand === 0){return 'ZERO';}
 			if(LeftOperand === 1){return 'ONE';}
 			if(LeftOperand === 2){return 'TWO';}
@@ -32,8 +34,8 @@ function LeftOperand(Pattren,LeftOperand){
 }
 function RightOperand(Pattren,RightOperand){
 	this.tostring = function(){
-		if(p === 2) {return RightOperand;}
-		else if(p === 1){
+		if(Pattren === 2) {return RightOperand;}
+		else if(Pattren === 1){
 			if(LeftOperand === 0){return 'ZERO';}
 			if(LeftOperand === 1){return 'ONE';}
 			if(LeftOperand === 2){return 'TWO';}
@@ -50,7 +52,7 @@ function RightOperand(Pattren,RightOperand){
 
 describe('Captcha' , function() {
 	it('should echo "2 + FIVE" when input (1,1,2,5)',function(){
-		Captcha ex1 = new Captcha(1,1,2,5);
-	 expect(Captcha()).toEqual('2 + FIVE');
+		let ex1 = new Captcha(1,1,2,5);
+	 expect(ex1()).toEqual('2 + FIVE');
  });
-}
+});
