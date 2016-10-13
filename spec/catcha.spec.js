@@ -54,13 +54,17 @@ describe('Captcha' , function() {
 	it('should echo "2 + FIVE" when input (1,1,2,5)',function(){
 		let ex1 = new Captcha(1,1,2,5);
 	 expect(ex1.generate()).toEqual('2 + FIVE');
- });
+ 	});
  it('should echo "8 + TWO" when input (1,1,8,2)',function(){
 	 let test1 = new Captcha(1,1,8,2);
 	expect(test1.generate()).toEqual('8 + TWO');
-});
-it('should echo "1 - ONE" when input (1,2,1,1)',function(){
-	let test2 = new Captcha(1,2,1,1);
- expect(test2.generate()).toEqual('1 - ONE');
-});
+	});
+	it('should echo "1 - ONE" when input (1,2,1,1)',function(){
+		let test2 = new Captcha(1,2,1,1);
+	 expect(test2.generate()).toEqual('1 - ONE');
+	});
+	it('should echo "2 * SIX" when input (1,3,2,6)',function(){
+		let test3 = new Captcha(1,3,2,6);
+	 expect(test3.generate()).toEqual('2 * SIX');
+	});
 });
