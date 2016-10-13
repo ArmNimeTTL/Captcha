@@ -87,4 +87,8 @@ describe('Captcha' , function() {
 		let test8 = new Captcha(2,4,7,7);
 	 expect(test8.generate()).toEqual('SEVEN / 7');
 	});
+	it('should echo "ZERO + 0" when input (2,1,0,0)',function(){
+		let test9 = new Captcha(2,1,0,0);
+	 expect(test9.generate()).toEqual('ZERO + 0');
+	});
 });
