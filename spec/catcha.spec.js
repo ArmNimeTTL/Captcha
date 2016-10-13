@@ -83,4 +83,8 @@ describe('Captcha' , function() {
 		let test7 = new Captcha(2,3,3,5);
 	 expect(test7.generate()).toEqual('THREE * 5');
 	});
+	it('should echo "SEVEN / 7" when input (2,4,7,7)',function(){
+		let test8 = new Captcha(2,4,7,7);
+	 expect(test8.generate()).toEqual('SEVEN / 7');
+	});
 });
