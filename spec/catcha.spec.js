@@ -91,4 +91,8 @@ describe('Captcha' , function() {
 		let test9 = new Captcha(2,1,0,0);
 	 expect(test9.generate()).toEqual('ZERO + 0');
 	});
+	it('should echo "5 * NINE" when input (1,3,5,9)',function(){
+		let test10 = new Captcha(1,3,5,9);
+	 expect(test10.generate()).toEqual('5 * NINE');
+	});
 });
