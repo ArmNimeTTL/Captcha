@@ -67,4 +67,8 @@ describe('Captcha' , function() {
 		let test3 = new Captcha(1,3,2,6);
 	 expect(test3.generate()).toEqual('2 * SIX');
 	});
+	it('should echo "9 / THREE" when input (1,4,9,3)',function(){
+		let test4 = new Captcha(1,4,9,3);
+	 expect(test4.generate()).toEqual('9 / THREE');
+	});
 });
