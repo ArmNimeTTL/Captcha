@@ -71,4 +71,8 @@ describe('Captcha' , function() {
 		let test4 = new Captcha(1,4,9,3);
 	 expect(test4.generate()).toEqual('9 / THREE');
 	});
+	it('should echo "ONE + 2" when input (2,1,1,2)',function(){
+		let test5 = new Captcha(2,1,1,2);
+	 expect(test5.generate()).toEqual('ONE + 2');
+	});
 });
